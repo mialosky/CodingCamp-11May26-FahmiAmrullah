@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Expense & Budget Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header dengan Dark Mode toggle -->
+    <div class="header">
+      <h1>Expense & Budget Visualizer</h1>
+      <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Total Balance -->
+    <div class="balance-box">
+      <div class="balance-label">TOTAL BALANCE</div>
+      <div class="balance-value" id="totalBalance">$0.00</div>
+    </div>
+
+    <!-- Form Add Transaction -->
+    <div class="form-box">
+      <h3>Add Transaction</h3>
+      <input type="text" id="itemName" placeholder="Item Name" autocomplete="off">
+      <input type="number" id="amount" placeholder="Amount" autocomplete="off" step="0.01">
+      
+      <div class="category-wrapper">
+        <select id="categorySelect">
+          <option value="Food">🍔 Food</option>
+          <option value="Transport">🚗 Transport</option>
+          <option value="Fun">🎉 Fun</option>
+        </select>
+        <input type="text" id="newCategory" placeholder="New category">
+        <button id="addCategoryBtn" class="small-btn">+ Add</button>
+      </div>
+      
+      <button id="addTransactionBtn" class="add-btn">+ Add Transaction</button>
+    </div>
+
+    <!-- Sort -->
+    <div class="sort-bar">
+      <span>Sort by:</span>
+      <select id="sortSelect">
+        <option value="latest">Latest first</option>
+        <option value="amount_asc">Amount (low to high)</option>
+        <option value="amount_desc">Amount (high to low)</option>
+        <option value="category">Category (A-Z)</option>
+      </select>
+    </div>
+
+    <!-- Transactions List -->
+    <div class="transactions-box">
+      <h3>Transactions</h3>
+      <div id="transactionsList" class="transactions-list"></div>
+    </div>
+
+    <!-- Spending by Category (Horizontal Bars) -->
+    <div class="spending-box">
+      <h3>Spending by Category</h3>
+      <div id="spendingBars" class="spending-bars"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

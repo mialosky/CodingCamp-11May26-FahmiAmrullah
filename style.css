@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  padding: 20px;
+  transition: background 0.2s, color 0.2s;
+}
+
+body.dark {
+  background: #121826;
+  color: #e2e8f0;
+}
+
+.app {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+
+body.dark h1 {
+  color: #f1f5f9;
+}
+
+.dark-toggle {
+  background: #334155;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 40px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+body.dark .dark-toggle {
+  background: #475569;
+}
+
+/* Balance Box */
+.balance-box {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  text-align: center;
+  padding: 32px 20px;
+  border-radius: 28px;
+  margin-bottom: 24px;
+}
+
+.balance-label {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.balance-value {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* Form Box */
+.form-box {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+body.dark .form-box,
+body.dark .transactions-box,
+body.dark .spending-box {
+  background: #1e293b;
+}
+
+.form-box h3 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.form-box input,
+.form-box select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  font-size: 1rem;
+  background: white;
+}
+
+body.dark .form-box input,
+body.dark .form-box select {
+  background: #0f172a;
+  border-color: #334155;
+  color: white;
+}
+
+.category-wrapper {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.category-wrapper select {
+  flex: 2;
+  margin-bottom: 0;
+}
+
+.category-wrapper input {
+  flex: 2;
+  margin-bottom: 0;
+}
+
+.small-btn {
+  flex: 1;
+  background: #64748b;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-btn {
+  width: 100%;
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.add-btn:hover {
+  background: #059669;
+}
+
+/* Sort Bar */
+.sort-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sort-bar span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+body.dark .sort-bar span {
+  color: #94a3b8;
+}
+
+.sort-bar select {
+  padding: 6px 12px;
+  border-radius: 40px;
+  border: 1px solid #cbd5e1;
+  background: white;
+}
+
+body.dark .sort-bar select {
+  background: #0f172a;
+  color: white;
+  border-color: #334155;
+}
+
+/* Transactions Box */
+.transactions-box {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.transactions-box h3 {
+  margin-bottom: 16px;
+}
+
+.transactions-list {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.transaction-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eef2f6;
+}
+
+body.dark .transaction-row {
+  border-bottom-color: #334155;
+}
+
+.transaction-details {
+  flex: 2;
+}
+
+.transaction-name {
+  font-weight: 600;
+  display: block;
+}
+
+.transaction-cat {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  margin-right: 12px;
+}
+
+.delete-transaction {
+  background: #fee2e2;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #dc2626;
+}
+
+body.dark .delete-transaction {
+  background: #450a0a;
+  color: #f87171;
+}
+
+/* Spending by Category - Horizontal Bars */
+.spending-box {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.spending-box h3 {
+  margin-bottom: 16px;
+}
+
+.spending-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cat-label {
+  width: 85px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.bar-wrapper {
+  flex: 1;
+  background: #e2e8f0;
+  border-radius: 30px;
+  height: 32px;
+  overflow: hidden;
+}
+
+body.dark .bar-wrapper {
+  background: #334155;
+}
+
+.bar-fill-cat {
+  height: 100%;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  transition: width 0.2s;
+}
+
+.cat-percent {
+  min-width: 50px;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+body.dark .cat-percent {
+  color: #cbd5e1;
+}
+
+/* Category colors */
+.category-bar-item[data-category="Food"] .bar-fill-cat { background: #f97316; }
+.category-bar-item[data-category="Transport"] .bar-fill-cat { background: #3b82f6; }
+.category-bar-item[data-category="Fun"] .bar-fill-cat { background: #eab308; }
